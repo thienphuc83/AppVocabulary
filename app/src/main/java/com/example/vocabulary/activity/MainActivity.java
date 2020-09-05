@@ -10,6 +10,7 @@ import android.widget.Button;
 
 import com.example.vocabulary.R;
 import com.example.vocabulary.adapter.AllChuDeTuAdapter;
+import com.example.vocabulary.adapter.AllTuAdapter;
 import com.example.vocabulary.model.ChuDeTu;
 import com.example.vocabulary.model.Tu;
 import com.example.vocabulary.server.APIService;
@@ -26,8 +27,11 @@ public class MainActivity extends AppCompatActivity {
 
 
     Button btnCumtu;
-    RecyclerView rvDSTu, rvDSChudetu;
+    RecyclerView rvDSChudetu;
     ArrayList<ChuDeTu> mangchudetu;
+//    ArrayList<Tu> mangtu;
+//    rvDSTu
+//    AllTuAdapter allTuAdapter;
     AllChuDeTuAdapter allChuDeTuAdapter;
 
     @Override
@@ -36,12 +40,31 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         AnhXa();
         GetDataAllChuDeTu();
-        GetDataAllTu();
+//        GetDataAllTu();
 
     }
 
-    private void GetDataAllTu() {
-    }
+//    private void GetDataAllTu() {
+//        DataService dataService = APIService.getService();
+//        Call<List<Tu>> call = dataService.GetAllTu();
+//        call.enqueue(new Callback<List<Tu>>() {
+//            @Override
+//            public void onResponse(Call<List<Tu>> call, Response<List<Tu>> response) {
+//                mangtu = (ArrayList<Tu>) response.body();
+////                Log.d("BBB", mangtu.get(0).getTu());
+//                allTuAdapter = new AllTuAdapter(MainActivity.this, mangtu);
+//                LinearLayoutManager layoutManager= new LinearLayoutManager(MainActivity.this);
+//                layoutManager.setOrientation(RecyclerView.VERTICAL);
+//                rvDSTu.setLayoutManager(layoutManager);
+//                rvDSTu.setAdapter(allTuAdapter);
+//            }
+//
+//            @Override
+//            public void onFailure(Call<List<Tu>> call, Throwable t) {
+//
+//            }
+//        });
+//    }
 
     private void GetDataAllChuDeTu() {
         DataService dataService = APIService.getService();
@@ -53,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
 //                Log.d("AAA", mangchudetu.get(0).getTenChuDeTu());
                 allChuDeTuAdapter = new AllChuDeTuAdapter(MainActivity.this, mangchudetu);
                 LinearLayoutManager linearLayoutManager = new LinearLayoutManager(MainActivity.this);
-                linearLayoutManager.setOrientation(RecyclerView.HORIZONTAL);
+                linearLayoutManager.setOrientation(RecyclerView.VERTICAL);
                 rvDSChudetu.setLayoutManager(linearLayoutManager);
                 rvDSChudetu.setAdapter(allChuDeTuAdapter);
 
@@ -68,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void AnhXa() {
         rvDSChudetu = findViewById(R.id.rvallchudetu);
-        rvDSTu = findViewById(R.id.rvalltu);
+//        rvDSTu = findViewById(R.id.rvalltu);
         btnCumtu = findViewById(R.id.btncumtu);
     }
 }

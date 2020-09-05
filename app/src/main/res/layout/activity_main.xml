@@ -25,27 +25,15 @@
     </RelativeLayout>
     <LinearLayout
         android:padding="10dp"
-        android:weightSum="10"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="2">
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvallchudetu"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
-        </LinearLayout>
-        <LinearLayout
             android:gravity="center"
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.5">
+            android:layout_height="wrap_content"
+            >
             <Button
                 android:elevation="10dp"
                 android:textStyle="bold"
@@ -72,15 +60,28 @@
                 android:text="Cụm từ"/>
         </LinearLayout>
         <LinearLayout
+            android:layout_marginTop="5dp"
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="7.5">
+            android:layout_height="match_parent"
+            >
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvalltu"
+                android:id="@+id/rvallchudetu"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"/>
         </LinearLayout>
+
+<!--        <LinearLayout-->
+<!--            android:orientation="vertical"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="0dp"-->
+<!--            android:layout_weight="7.5">-->
+
+<!--            <androidx.recyclerview.widget.RecyclerView-->
+<!--                android:id="@+id/rvalltu"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"/>-->
+<!--        </LinearLayout>-->
     </LinearLayout>
 </LinearLayout>
