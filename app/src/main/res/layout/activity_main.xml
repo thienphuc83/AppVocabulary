@@ -1,18 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".activity.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <RelativeLayout
+        android:background="@color/colorPrimaryDark"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        >
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_centerVertical="true"
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Speced Repetition"
+            android:textColor="@color/colorAqua"
+            android:textStyle="bold"
+            android:fontFamily="serif"/>
+    </RelativeLayout>
+    <LinearLayout
+        android:padding="10dp"
+        android:weightSum="10"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvallchudetu"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </LinearLayout>
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5">
+            <Button
+                android:elevation="10dp"
+                android:textStyle="bold"
+                android:fontFamily="serif"
+                android:background="@drawable/custom_button_click"
+                android:textColor="@color/colorPrimaryDark"
+                android:textAllCaps="false"
+                android:layout_weight="1"
+                android:layout_margin="3dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Ngữ pháp"/>
+            <Button
+                android:id="@+id/btncumtu"
+                android:textStyle="bold"
+                android:fontFamily="serif"
+                android:background="@drawable/custom_button_click"
+                android:textColor="@color/colorPrimaryDark"
+                android:textAllCaps="false"
+                android:layout_weight="1"
+                android:layout_margin="3dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Cụm từ"/>
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="7.5">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvalltu"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
