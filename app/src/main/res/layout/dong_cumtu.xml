@@ -34,4 +34,5 @@
             android:maxLines="2"
             android:textColor="@color/colorAqua"/>
     </LinearLayout>
+
 </androidx.cardview.widget.CardView>

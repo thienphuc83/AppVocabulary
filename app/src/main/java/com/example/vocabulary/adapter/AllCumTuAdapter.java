@@ -45,7 +45,7 @@ public class AllCumTuAdapter extends RecyclerView.Adapter<AllCumTuAdapter.ViewHo
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
-        TextView tvCumtu, tvNghiacumtu;
+        TextView tvCumtu, tvNghiacumtu,tvstt;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             tvCumtu =itemView.findViewById(R.id.tvcumtu);

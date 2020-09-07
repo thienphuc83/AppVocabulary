@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -64,6 +65,7 @@ public class AllChuDeTuAdapter extends RecyclerView.Adapter<AllChuDeTuAdapter.Vi
                     Intent intent = new Intent(context, TuTheoChuDeActivity.class);
                     intent.putExtra("idchudetu", chuDeTuArrayList.get(getPosition()));
                     context.startActivity(intent);
+
                 }
             });
         }

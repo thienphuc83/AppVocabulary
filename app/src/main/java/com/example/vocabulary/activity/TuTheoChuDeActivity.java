@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.vocabulary.R;
 import com.example.vocabulary.adapter.AllTuAdapter;
@@ -28,13 +29,15 @@ import retrofit2.Response;
 
 public class TuTheoChuDeActivity extends AppCompatActivity {
 
+
     RecyclerView rvDSTutheochude;
     ImageView imgback;
-    TextView tvtenchude;
+    TextView tvtenchude, tvsotu;
     ArrayList<Tu> mangtu;
     ChuDeTu chuDeTu;
 
     AllTuAdapter allTuAdapter;
+    public static int sotu = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +53,7 @@ public class TuTheoChuDeActivity extends AppCompatActivity {
         rvDSTutheochude = findViewById(R.id.rvalltutheochude);
         imgback = findViewById(R.id.imgback);
         tvtenchude = findViewById(R.id.tvtenchude);
+        tvsotu = findViewById(R.id.tvsotu);
 
         imgback.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,6 +61,7 @@ public class TuTheoChuDeActivity extends AppCompatActivity {
                 finish();
             }
         });
+
     }
 
     private void GetIntent() {
@@ -80,6 +85,8 @@ public class TuTheoChuDeActivity extends AppCompatActivity {
                 linearLayoutManager.setOrientation(RecyclerView.VERTICAL);
                 rvDSTutheochude.setLayoutManager(linearLayoutManager);
                 rvDSTutheochude.setAdapter(allTuAdapter);
+                sotu = mangtu.size();
+                tvsotu.setText(sotu+" từ");
 
             }
 

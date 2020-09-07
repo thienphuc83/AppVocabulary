@@ -28,12 +28,13 @@ import retrofit2.Response;
 
 public class CumTuTheoChuDeActivity extends AppCompatActivity {
 
-    TextView tvtenchude;
+    TextView tvtenchude, tvsocumtu;
     ImageView imgback;
     RecyclerView rv;
     AllCumTuAdapter allCumTuAdapter;
     ArrayList<CumTu> mangcumtu;
     ChuDeCumTu chuDeCumTu;
+    public static int socumtu = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +59,9 @@ public class CumTuTheoChuDeActivity extends AppCompatActivity {
                 layoutManager.setOrientation(RecyclerView.VERTICAL);
                 rv.setLayoutManager(layoutManager);
                 rv.setAdapter(allCumTuAdapter);
+                socumtu = mangcumtu.size();
+                tvsocumtu.setText(socumtu+" cụm từ");
+
             }
 
             @Override
@@ -79,6 +83,7 @@ public class CumTuTheoChuDeActivity extends AppCompatActivity {
 
     private void AnhXa() {
         tvtenchude = findViewById(R.id.tvtenchudecumtu);
+        tvsocumtu = findViewById(R.id.tvsocumtu);
         imgback = findViewById(R.id.imgbacktenchudecumtu);
         rv = findViewById(R.id.rvallcumtutheochude);
 
