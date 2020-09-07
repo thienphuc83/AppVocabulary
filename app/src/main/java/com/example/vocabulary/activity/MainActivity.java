@@ -4,8 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 
 import com.example.vocabulary.R;
@@ -37,12 +39,18 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         AnhXa();
         GetDataAllChuDeTu();
-//        GetDataAllTu();
-
+        OnClick();
 
     }
 
-
+    private void OnClick() {
+        btnCumtu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, ChuDeCumTuActivity.class));
+            }
+        });
+    }
 
     private void GetDataAllChuDeTu() {
         DataService dataService = APIService.getService();
