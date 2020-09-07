@@ -42,6 +42,7 @@ public class AllChuDeTuAdapter extends RecyclerView.Adapter<AllChuDeTuAdapter.Vi
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         ChuDeTu chuDeTu = chuDeTuArrayList.get(position);
         holder.tvTenchudetu.setText(chuDeTu.getTenChuDeTu());
+        holder.tvstt.setText(chuDeTu.getIdChuDeTu());
         Picasso.with(context).load(chuDeTu.getHinhChuDeTu()).into(holder.imgChudetu);
     }
 
@@ -52,11 +53,12 @@ public class AllChuDeTuAdapter extends RecyclerView.Adapter<AllChuDeTuAdapter.Vi
 
     public class ViewHolder extends RecyclerView.ViewHolder{
 
-        TextView tvTenchudetu;
+        TextView tvTenchudetu, tvstt;
         ImageView imgChudetu;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             tvTenchudetu = itemView.findViewById(R.id.tvtenchudetu);
+            tvstt = itemView.findViewById(R.id.tvsttchudetu);
             imgChudetu = itemView.findViewById(R.id.imgchudetu);
 
             itemView.setOnClickListener(new View.OnClickListener() {

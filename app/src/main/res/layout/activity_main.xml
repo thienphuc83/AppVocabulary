@@ -2,74 +2,63 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".activity.MainActivity">
 
     <RelativeLayout
-        android:background="@color/colorPrimaryDark"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        >
+        android:background="@color/colorPrimaryDark">
+
         <TextView
-            android:layout_marginLeft="10dp"
-            android:layout_centerVertical="true"
-            android:textSize="20sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:fontFamily="serif"
             android:text="Speced Repetition"
             android:textColor="@color/colorAqua"
-            android:textStyle="bold"
-            android:fontFamily="serif"/>
+            android:textSize="20sp"
+            android:textStyle="bold" />
     </RelativeLayout>
+
     <LinearLayout
-        android:padding="10dp"
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp">
+
         <LinearLayout
-            android:gravity="center"
-            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            >
-            <Button
-                android:elevation="10dp"
-                android:textStyle="bold"
-                android:fontFamily="serif"
-                android:background="@drawable/custom_button_click"
-                android:textColor="@color/colorPrimaryDark"
-                android:textAllCaps="false"
-                android:layout_weight="1"
-                android:layout_marginRight="1dp"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="Ngữ pháp"/>
+            android:gravity="center"
+            android:orientation="horizontal">
+
             <Button
                 android:id="@+id/btncumtu"
-                android:textStyle="bold"
-                android:fontFamily="serif"
-                android:background="@drawable/custom_button_click"
-                android:textColor="@color/colorPrimaryDark"
-                android:textAllCaps="false"
-                android:layout_weight="1"
-                android:layout_marginLeft="1dp"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Cụm từ"/>
+                android:layout_marginLeft="1dp"
+                android:background="@drawable/custom_button_click"
+                android:fontFamily="serif"
+                android:text="1000 Cụm từ"
+                android:textAllCaps="false"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold" />
         </LinearLayout>
+
         <LinearLayout
-            android:layout_marginTop="5dp"
-            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            >
+            android:layout_marginTop="5dp"
+            android:orientation="vertical">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvallchudetu"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+                android:layout_height="match_parent" />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

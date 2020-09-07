@@ -26,6 +26,18 @@
                 android:background="@drawable/custom_bg_color"
                 android:layout_width="match_parent"
                 android:layout_height="220dp"/>
+            <TextView
+                android:id="@+id/tvsttchudecumtu"
+                android:layout_margin="5dp"
+                android:background="@drawable/custom_stt"
+                android:gravity="center"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:text="01"
+                android:fontFamily="serif"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="15sp"/>
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_gravity="center"
