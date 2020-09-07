@@ -1,6 +1,7 @@
 package com.example.vocabulary.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.vocabulary.R;
+import com.example.vocabulary.activity.TuTheoChuDeActivity;
 import com.example.vocabulary.model.ChuDeTu;
 import com.squareup.picasso.Picasso;
 
@@ -55,6 +57,15 @@ public class AllChuDeTuAdapter extends RecyclerView.Adapter<AllChuDeTuAdapter.Vi
             super(itemView);
             tvTenchudetu = itemView.findViewById(R.id.tvtenchudetu);
             imgChudetu = itemView.findViewById(R.id.imgchudetu);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(context, TuTheoChuDeActivity.class);
+                    intent.putExtra("idchudetu", chuDeTuArrayList.get(getPosition()));
+                    context.startActivity(intent);
+                }
+            });
         }
     }
 }

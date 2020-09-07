@@ -6,15 +6,22 @@ import com.example.vocabulary.model.Tu;
 import java.util.List;
 
 import retrofit2.Call;
+import retrofit2.http.Field;
+import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
+import retrofit2.http.POST;
 
 public interface DataService {
 
     @GET("getallchudetu.php")
     Call<List<ChuDeTu>> GetAllChuDeTu();
 
-    @GET("getalltu.php")
-    Call<List<Tu>> GetAllTu();
+//    @GET("getalltu.php")
+//    Call<List<Tu>> GetAllTu();
+
+    @FormUrlEncoded
+    @POST("getalltu.php")
+    Call<List<Tu>> GetAllTuTheoChuDe(@Field("idchudetu") String idchudetu);
 
 //    getallchudecumtu.php
 //    getallcumtu.php

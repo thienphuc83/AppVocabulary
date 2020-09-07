@@ -29,9 +29,6 @@ public class MainActivity extends AppCompatActivity {
     Button btnCumtu;
     RecyclerView rvDSChudetu;
     ArrayList<ChuDeTu> mangchudetu;
-//    ArrayList<Tu> mangtu;
-//    rvDSTu
-//    AllTuAdapter allTuAdapter;
     AllChuDeTuAdapter allChuDeTuAdapter;
 
     @Override
@@ -42,29 +39,10 @@ public class MainActivity extends AppCompatActivity {
         GetDataAllChuDeTu();
 //        GetDataAllTu();
 
+
     }
 
-//    private void GetDataAllTu() {
-//        DataService dataService = APIService.getService();
-//        Call<List<Tu>> call = dataService.GetAllTu();
-//        call.enqueue(new Callback<List<Tu>>() {
-//            @Override
-//            public void onResponse(Call<List<Tu>> call, Response<List<Tu>> response) {
-//                mangtu = (ArrayList<Tu>) response.body();
-////                Log.d("BBB", mangtu.get(0).getTu());
-//                allTuAdapter = new AllTuAdapter(MainActivity.this, mangtu);
-//                LinearLayoutManager layoutManager= new LinearLayoutManager(MainActivity.this);
-//                layoutManager.setOrientation(RecyclerView.VERTICAL);
-//                rvDSTu.setLayoutManager(layoutManager);
-//                rvDSTu.setAdapter(allTuAdapter);
-//            }
-//
-//            @Override
-//            public void onFailure(Call<List<Tu>> call, Throwable t) {
-//
-//            }
-//        });
-//    }
+
 
     private void GetDataAllChuDeTu() {
         DataService dataService = APIService.getService();
